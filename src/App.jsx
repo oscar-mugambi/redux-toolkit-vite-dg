@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import './App.css'
+import AddPostForm from './features/posts/AddPostForm'
 import PostsList from './features/posts/PostLists'
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   return (
     <div className='App'>
       <PostsList />
+      <AddPostForm />
     </div>
   )
 }
