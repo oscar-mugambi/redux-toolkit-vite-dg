@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
-import Counter from './features/counter/Counter'
+
 import './App.css'
+import PostsList from './features/posts/PostLists'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className='App'>
-      <Counter />
+      <PostsList />
     </div>
   )
 }
