@@ -24,6 +24,7 @@ const AddPostForm = () => {
     if (canSave) {
       try {
         setAddRequestStatus('pending')
+        // unwrap will ensure we return an action payload or throw an error if rejected
         dispatch(addNewPost({ title, body: content, userId })).unwrap()
 
         setTitle('')
