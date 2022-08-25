@@ -7,7 +7,7 @@ const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts'
 const initialState = {
   posts: [],
   status: 'idle', //'idle' | 'loading' | 'succeeded' | 'failed'
-  error: null,
+  error: '',
 }
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
@@ -114,6 +114,9 @@ const postSlice = createSlice({
 export const selectAllPosts = (state) => state.posts.posts
 export const getPostStatus = (state) => state.posts.status
 export const getPostError = (state) => state.posts.error
+
+export const selectPostById = (state, postId) =>
+  state.posts.posts.find((post) => post.id === postId)
 
 export const { postAdded, reactionAdded } = postSlice.actions
 

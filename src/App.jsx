@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-import './App.css'
 import AddPostForm from './features/posts/AddPostForm'
 import PostsList from './features/posts/PostLists'
+import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
