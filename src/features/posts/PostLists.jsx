@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import PostExcerpt from './PostExcerpt'
 import { selectAllPosts, getPostStatus, getPostError, fetchPosts } from './postsSlice'
@@ -8,12 +8,14 @@ const PostsList = () => {
   const posts = useSelector(selectAllPosts)
   const postStatus = useSelector(getPostStatus)
   const error = useSelector(getPostError)
+  let count = 0
 
   useEffect(() => {
-    if (postStatus === 'idle') {
+    count = count + 1
+    if (postStatus === 'idle' && count <= 1) {
       dispatch(fetchPosts())
     }
-  }, [postStatus, dispatch])
+  }, [dispatch, fetchPosts])
 
   let content
   if (postStatus === 'loading') {

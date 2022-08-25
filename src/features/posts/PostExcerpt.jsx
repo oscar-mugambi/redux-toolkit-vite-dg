@@ -4,7 +4,6 @@ import PostAuthor from './PostAuthor'
 import TimeAgo from './TimeAgo'
 
 const PostExcerpt = ({ post }) => {
-  console.log(post)
   return (
     <article>
       <h3>{post.title}</h3>
